@@ -1,0 +1,11 @@
+flow_homepage:
+    path:     /flow
+    defaults: { _controller: FlowBundle:Flow:index }
+
+create_object:
+    path:     /objet
+    defaults: { _controller: FlowBundle:CreateObject:addFlow }
+
+#flow:
+#    path:     /flow/results
+#    defaults: { _controller: FlowBundle:Default:show_result}

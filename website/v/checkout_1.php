@@ -1,0 +1,61 @@
+<?php
+require 'header.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Personews</title>
+        <!-- Bootstrap Core CSS -->
+        <!--<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+        <link href="<?= $path_project; ?>v/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+        <!-- CUSTOM STYLES -->
+        <link href="<?= $path_project; ?>v/bootstrap/dist/css/shop-homepage.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+    </head>
+    <body>
+        <?php
+        if (isset($_GET['id'])) {
+            $product = $DB->query('SELECT id FROM flow WHERE id=:id', array('id' => $_GET['id']));
+            if (empty($product)) {
+                die("Ce produit n'existe pas");
+            }
+            //var_dump($product);
+            ?>
+            <?php require 'nav.php'; ?>
+            <div class="container">
+                <div class="row">
+                    <div class="jumbotron">
+                        <h1 class="text-center">Thanx for your purchase !</h1>
+                        <p>
+                            <a class="btn btn-success btn-lg col-lg-4 col-lg-offset-4" 
+                               href="<?= $path_project; ?>v/index.php" role="button">
+                                   <?php echo ('Go to the flow'); ?> 
+                            </a>
+                        </p>
+                        <?php
+                    } else {
+                        echo ("<p>Vous n'avez pas sélectionné de produit à ajouter au panier</p>");
+                    }
+                    ?>
+
+                </div>               
+            </div>
+        </div>
+        <!-- /.container -->
+
+        <?php require ('footer.php'); ?>

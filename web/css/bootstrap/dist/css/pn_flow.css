@@ -1,0 +1,31 @@
+body { background-color:#FFFF; }
+
+/*
+[class*="col"] { margin-bottom: 20px; }
+
+img { width: 100%; }
+
+.well {
+
+    background-color:#CCC;
+
+    padding: 20px;
+
+}
+*/
+
+.container_1 {
+    margin-top: 55px;
+}
+
+.test{
+    border-radius: 6px;
+    height: 100px;
+}
+/*
+[class*="col-"], footer {
+    background-color: lightgreen;
+    border-radius: 6px;
+    line-height: 40px;
+    text-align: center;
+}*/

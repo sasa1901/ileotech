@@ -1,0 +1,4 @@
+AuthName "protected page"
+AuthType Basic
+AuthUserFile "C:\xampp\htdocs\personews\PersoNews\website\v\admin\.htpasswd"
+Require valid-user
